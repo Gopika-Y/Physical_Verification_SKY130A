@@ -1,4 +1,4 @@
-# Physical Verification Using SKY130 PDK
+   # Physical Verification Using SKY130 PDK
 
 This repository documents the setup and verification of the open-source EDA toolflow (Magic, Netgen, Xschem, Ngspice) and the SkyWater 130nm PDK for the VSD physical verification workshop.
 
@@ -55,6 +55,8 @@ inverter/
 - **PDK SPICE Model**: `/usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt`
 - **Supply Voltage ($V_{\text{DD}}$)**: $1.8\text{ V}$ (Source `V2`)
 - **Input Signal ($V_{\text{in}}$)**: Piecewise Linear pulse (`PWL(0 0 20n 0 900n 1.8)`)
+  ![Inverter Testbench Schematic](inverter_tb_schematic.png)
+  ![Inverter Testbench Schematic](inverter_simulation_waveform.png)
 - **Control Script**:
   ```spice
   .control
