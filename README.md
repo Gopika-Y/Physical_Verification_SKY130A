@@ -48,3 +48,16 @@ inverter/
    - Terminals labeled: `in`, `out`, `vdd`, `vss`
 
    ![Inverter Schematic](inverter_schematic.png)
+
+## 3. Inverter Testbench & Transient Simulation
+
+### Testbench Setup (`inverter_tb.sch`)
+- **PDK SPICE Model**: `/usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt`
+- **Supply Voltage ($V_{\text{DD}}$)**: $1.8\text{ V}$ (Source `V2`)
+- **Input Signal ($V_{\text{in}}$)**: Piecewise Linear pulse (`PWL(0 0 20n 0 900n 1.8)`)
+- **Control Script**:
+  ```spice
+  .control
+  tran 1n 1u
+  plot V(in) V(out)
+  .endc
